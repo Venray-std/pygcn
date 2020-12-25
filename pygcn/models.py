@@ -12,7 +12,7 @@ class GCN(nn.Module):
         self.dropout = dropout
 
     def forward(self, x, adj):
-        x = F.relu(self.gc1(x, adj))
+        x = F.relu(self.gc1(x, adj))  # matrix A*H*W to encode
         x = F.dropout(x, self.dropout, training=self.training)
-        x = self.gc2(x, adj)
+        x = self.gc2(x, adj) # to decode to nclass
         return F.log_softmax(x, dim=1)

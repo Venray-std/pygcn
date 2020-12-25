@@ -1,3 +1,5 @@
+> code comment by Larry Kong
+
 Graph Convolutional Networks in PyTorch
 ====
 
